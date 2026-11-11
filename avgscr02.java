@@ -6,22 +6,29 @@ public class avgscr02{
         int total = 0;
         double average;
 
-        for (int i = 0; i < studentScores.length; i++) {
+        for (int i = 0; i < studentScores.length; i++) {        // to input student score
             System.out.print("Enter the score for student #" + (i + 1) + ": ");
             studentScores[i] = input.nextInt();
             total += studentScores[i];
             }
-        average = (double) total / studentScores.length;
+        System.out.println("-------------------------------------------------");//to check who pass on score above 70
+        for (int i = 0; i < studentScores.length; i++){
+            if(studentScores[i] > 70){
+                System.out.println("student #" + (i+1) + ": " + " pass");
+            }
+        }
+        System.out.println("-------------------------------------------------");
+        average = (double) total / studentScores.length; // to calculate the avg score
         System.out.println("Total score: " + total);
         System.out.println("Average: " + average);
 
-        int highest = studentScores[0];
-        int lowest = studentScores[0];
+        int highest = studentScores[0]; 
+        int lowest = studentScores[0]; 
         for (int i = 1; i < studentScores.length; i++) {
-            if (studentScores[i] > highest) highest = studentScores[i];
-            if (studentScores[i] < lowest) lowest = studentScores[i];
+            if (studentScores[i] > highest) highest = studentScores[i]; // to make a new highest
+            if (studentScores[i] < lowest) lowest = studentScores[i]; // to make new lowest
         }
-        System.out.println("Highest score: " + highest);
+        System.out.println("Highest score: " + highest); // output
         System.out.println("Lowest score: " + lowest);
         String grade;
         if(average>=85){
